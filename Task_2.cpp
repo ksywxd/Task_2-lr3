@@ -30,14 +30,13 @@ void Task() {
     const double eps = 1e-3;
     double sum = 0.0;
     int n = 1;
-    double dn = std::pow(2, -n) + std::pow(3, -n);
+    double dn;
 
     do {
         dn = std::pow(2.0, -n) + std::pow(3.0, -n);
-        dn = 1 / 2 ^ n + 1 / 3 ^ n;
-        if (dn >= eps) { 
-            sum += dn; 
-        } 
+        if (dn >= eps) {
+            sum += dn;
+        }
         n++;
     } while (dn >= eps);
 
