@@ -32,11 +32,14 @@ void Task() {
     int n = 1;
     double dn = std::pow(2, -n) + std::pow(3, -n);
 
-    while (dn >= eps) {
-        sum += dn;
+    do {
+        dn = std::pow(2.0, -n) + std::pow(3.0, -n);
+        dn = 1 / 2 ^ n + 1 / 3 ^ n;
+        if (dn >= eps) { 
+            sum += dn; 
+        } 
         n++;
-        dn = std::pow(2, -n) + std::pow(3, -n);
-    }
+    } while (dn >= eps);
 
     std::cout << "Сумма ряда: " << sum << '\n';
 }
